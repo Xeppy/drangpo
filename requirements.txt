@@ -1,0 +1,5 @@
+# The core framework and the offline demo run on the Python standard library alone.
+# These are only needed for the real (non-offline) providers and store:
+sqlite-vec>=0.1.0     # SqliteVecStore: read a real vector corpus
+google-genai>=0.3.0   # GeminiEmbedder: query embeddings
+anthropic>=0.40.0     # ClaudeLLM: LLM-backed extractor + verifier
