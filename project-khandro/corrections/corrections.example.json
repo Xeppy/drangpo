@@ -1,0 +1,19 @@
+{
+  "_comment": "Example correction map. Each rule is {pat, rep, cs?, why?}. `pat` is a Python regex (case-insensitive unless cs=true). Rules are GUARDED so real words survive. Confirm every rule against real contexts with probe.py before adding it. `why` is documentation only, ignored by apply.py.",
+  "rules": [
+    {"pat": "\\bbody\\s+chitta\\b", "rep": "bodhicitta", "why": "ASR splits bodhicitta into two English words"},
+    {"pat": "\\bbody\\s+sattva\\b", "rep": "bodhisattva", "why": "same split, different term"},
+    {"pat": "\\bsome\\s+sara\\b", "rep": "samsara", "why": "'some sara' is never English here"},
+    {"pat": "\\bmaha\\s+mudra\\b", "rep": "Mahamudra", "why": "compound heard as two words"},
+    {"pat": "\\bprajna\\s+paramita\\b", "rep": "Prajnaparamita", "why": "compound split"},
+    {"pat": "\\bvajra\\s+yogini\\b", "rep": "Vajrayogini", "why": "deity name split"},
+    {"pat": "\\bdharma\\s+kaya\\b", "rep": "dharmakaya", "why": "kaya compounds split"},
+    {"pat": "\\bbar\\s+do\\b", "rep": "bardo", "why": "'bar do' is the intermediate state, not a bar"},
+    {"pat": "\\brig\\s+pa\\b", "rep": "rigpa", "why": "awareness term split"},
+    {"pat": "\\blam\\s+rim\\b", "rep": "Lamrim", "why": "stages-of-the-path text split"},
+    {"pat": "\\bnon\\s+dro\\b|\\bnondro\\b", "rep": "ngondro", "why": "preliminary practices, badly heard"},
+    {"pat": "\\bRimpoche\\b", "rep": "Rinpoche", "why": "common m-for-n mishearing of the honorific"},
+    {"pat": "\\bLlama\\b(?! *(?:mountain|animal|wool))", "rep": "Lama", "cs": true, "why": "the teacher, not the animal; case-sensitive and guarded so 'Dalai Lama' and real llamas survive. Note: also add a (?<!Dalai ) lookbehind in practice."},
+    {"pat": "\\bBhutan(?=\\s+(?:nature|Dakini|mind))", "rep": "Buddha", "why": "Bhutan the country must survive; only correct it when followed by nature/Dakini/mind, where it is really Buddha"}
+  ]
+}

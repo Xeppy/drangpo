@@ -164,9 +164,10 @@ had addressed, blocked answers where the model added an unsupported flourish, an
 abstained honestly on questions she never touched. It is deliberately generic:
 nothing here is tied to any particular teacher or community, and the demo runs on
 a synthetic corpus. The surrounding pipeline (GPU transcription of accented
-speech, a guarded correction pass, embedding, the vector index) is well-trodden
-and will be added as a sanitised, reusable scaffold around this core. The reason
-to care about this project is the core, not the scaffold.
+speech, a guarded correction pass, embedding, the vector index) is included,
+sanitised, in [`project-khandro/`](project-khandro/) as a reusable scaffold
+around this core. The reason to care about this project is the core, not the
+scaffold.
 
 ## Licence
 
